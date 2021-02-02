@@ -56,18 +56,26 @@ public class ExpenseLogsFragment extends Fragment {
         View rootView = inflater.inflate(R.layout.fragment_expense_logs, container, false);
         TableLayout logsTableLayout = (TableLayout) rootView.findViewById(R.id.logs_table);
         TableRow tableRowHeader = (TableRow) rootView.findViewById(R.id.logs_table_header);
-
+        TextView balance = (TextView) rootView.findViewById(R.id.balance);
         currentExpenseManager = (ExpenseManager) getArguments().get(EXPENSE_MANAGER);
         List<Transaction> transactionList = new ArrayList<>();
+        List<String> accountNumbersList = new ArrayList<>();
         if (currentExpenseManager != null) {
             transactionList = currentExpenseManager.getTransactionLogs();
+            accountNumbersList = currentExpenseManager.getAccountNumbersList();
         }
+        String balanceList = "";
+        for (String accountNo : accountNumbersList) {
+            balanceList+="Account No: "+accountNo+" balance is Rs. "+(String.valueOf(currentExpenseManager.getBalance(accountNo)))+"\n";
+        }
+        balance.setText((CharSequence) balanceList);
         generateTransactionsTable(rootView, logsTableLayout, transactionList);
         return rootView;
     }
 
     private void generateTransactionsTable(View rootView, TableLayout logsTableLayout,
                                            List<Transaction> transactionList) {
+        currentExpenseManager = (ExpenseManager) getArguments().get(EXPENSE_MANAGER);
         for (Transaction transaction : transactionList) {
             TableRow tr = new TableRow(rootView.getContext());
             TextView lDateVal = new TextView(rootView.getContext());

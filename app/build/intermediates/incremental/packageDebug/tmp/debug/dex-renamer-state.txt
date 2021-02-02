@@ -1,0 +1,4 @@
+#Tue Feb 02 13:23:36 IST 2021
+base.0=E\:\\AndroidStudioProjects\\SimpleExpenseManager\\app\\build\\intermediates\\dex\\debug\\mergeDexDebug\\classes.dex
+path.0=classes.dex
+renamed.0=classes.dex

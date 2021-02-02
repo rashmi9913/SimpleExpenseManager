@@ -16,14 +16,14 @@
   -->
 
 <GridLayout xmlns:android="http://schemas.android.com/apk/res/android"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:columnCount="2"
-            android:paddingBottom="@dimen/activity_vertical_margin"
-            android:paddingLeft="@dimen/activity_horizontal_margin"
-            android:paddingRight="@dimen/activity_horizontal_margin"
-            android:paddingTop="@dimen/activity_vertical_margin"
-            android:rowCount="6">
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:columnCount="2"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    android:rowCount="6">
 
     <TextView
         android:id="@+id/account_tv"
@@ -60,7 +60,7 @@
         android:inputType="text"/>
 
     <TextView
-        android:id="@+id/account_holder_name_tv"
+        android:id="@+id/balance_holder"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_column="0"
@@ -97,8 +97,10 @@
         android:id="@+id/add_account"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_column="0"
         android:layout_row="4"
-        android:text="@string/add_account_text"/>
+        android:layout_column="0"
+        android:background="#004D40"
+        android:text="@string/add_account_text"
+        android:textColor="#FFFFFF" />
 
 </GridLayout>

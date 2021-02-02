@@ -15,16 +15,16 @@
   -->
 
 <GridLayout xmlns:android="http://schemas.android.com/apk/res/android"
-            xmlns:tools="http://schemas.android.com/tools"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:columnCount="2"
-            android:paddingBottom="@dimen/activity_vertical_margin"
-            android:paddingLeft="@dimen/activity_horizontal_margin"
-            android:paddingRight="@dimen/activity_horizontal_margin"
-            android:paddingTop="@dimen/activity_vertical_margin"
-            android:rowCount="6"
-            tools:context=".MainActivity$PlaceholderFragment">
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:columnCount="2"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    android:rowCount="6"
+    tools:context=".MainActivity$PlaceholderFragment">
 
     <TextView
         android:id="@+id/account_text_tv"
@@ -63,7 +63,9 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:checked="true"
-            android:text="@string/expense_text"/>
+            android:text="@string/expense_text"
+            android:textColorHighlight="#004D40"
+            android:textColorLink="#004D40" />
 
         <RadioButton
             android:id="@+id/income"
@@ -111,8 +113,10 @@
         android:id="@+id/submit_amount"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_column="0"
         android:layout_row="4"
-        android:text="@string/submit"/>
+        android:layout_column="0"
+        android:background="#004D40"
+        android:text="@string/submit"
+        android:textColor="#FFFFFF" />
 
 </GridLayout>

@@ -65,8 +65,8 @@ public abstract class ExpenseManager implements Serializable {
 
         if (!amount.isEmpty()) {
             double amountVal = Double.parseDouble(amount);
-            transactionsHolder.logTransaction(transactionDate, accountNo, expenseType, amountVal);
             accountsHolder.updateBalance(accountNo, expenseType, amountVal);
+            transactionsHolder.logTransaction(transactionDate, accountNo, expenseType, amountVal);
         }
     }
 
@@ -78,6 +78,7 @@ public abstract class ExpenseManager implements Serializable {
     public List<Transaction> getTransactionLogs() {
         return transactionsHolder.getPaginatedTransactionLogs(10);
     }
+
 
     /***
      * Add account to the accounts dao.
@@ -133,4 +134,8 @@ public abstract class ExpenseManager implements Serializable {
      * objects will be initialized.
      */
     public abstract void setup() throws ExpenseManagerException;
+
+    public double getBalance(String accountNo) {
+        return accountsHolder.getBalance(accountNo);
+    }
 }
